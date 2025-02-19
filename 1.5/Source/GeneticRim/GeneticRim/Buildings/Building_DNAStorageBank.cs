@@ -63,7 +63,7 @@ namespace GeneticRim
 
 
                     yield return GenomeListSetupUtility.SetAnimalListCommand(this, this.Map, this.selectedGenome);
-                    if (Prefs.DevMode)
+                    if (DebugSettings.ShowDevGizmos)
                     {
                         Command_Action command_Action = new Command_Action();
                         command_Action.defaultLabel = "DEBUG: Finish DNA progress";
@@ -110,6 +110,7 @@ namespace GeneticRim
 
             if (selectedGenome != null)
             {
+                sb.AppendLine();
                 sb.AppendLine("GR_SelectedGenome".Translate(selectedGenome.LabelCap));
                 sb.AppendLine("GR_DNABankProgress".Translate(this.progress.ToStringPercent()));
             }
